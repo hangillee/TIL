@@ -9,5 +9,5 @@
 
 ### Docker Compose
 
-- [Docker Compose](https://github.com/hangillee/Docker/Compose/README.md)
-- [Environment Variables](https://github.com/hangillee/Docker/Compose/Environment%20Variables.md)
+- [Docker Compose](https://github.com/hangillee/TIL/blob/main/Docker/Compose/README.md)
+- [Environment Variables](https://github.com/hangillee/TIL/blob/main/Docker/Compose/Environment%20Variables.md)
