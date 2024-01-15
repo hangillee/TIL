@@ -8,9 +8,19 @@
 
 즉, **서로 다른 컨테이너들이 함께 동작해야 한다면 하나의 어플리케이션으로 정의하고 간편하게 실행**시키는 것이 Compose.
 
+### Docker Compose 설치하기
+
+Compose는 3가지 방식으로 설치할 수 있음.
+
+- Docker Desktop 설치 (가장 권장되는 방법)
+- Docker Compose 플러그인 설치
+- Docker Compose Standalone 설치 (비추천)
+
+Docker Compose를 실행하기 위해서는 Docker Engine과 Docker CLI 설치가 필수 조건이기 때문에 모두 자동으로 설치되는 Docker Desktop 설치를 추천함.
+
 ### Docker Compose 사용하기
 
-**YAML** 파일을 사용해 어플리케이션의 서비스들을 구성하고 명령어 한 줄로 YAML에 적어둔 구성 정보대로 모든 서비스들이 생성, 시작됨.
+**YAML** 파일을 사용해 어플리케이션의 서비스들을 구성하고 명령어 한 줄로 YAML에 적어둔 구성 정보대로 모든 서비스들이 생성, 시작됨. **YAML 파일의 이름은 `compose.yml`이 가장 권장**됨. 물론, `docker-compose.yaml`이나 `docker-compose.yml`도 사용 가능.
 
 ```yaml
 # compose.yml
@@ -42,8 +52,31 @@ Compose는 운영, 스테이징, 개발, 테스트, CI Workflow 등의 모든 �
 
 ### Docker Compose 어플리케이션 구성
 
-- services : 컨테이너 이미지와 설정을 통해 실제 실행되는 서비스
-- networks : 서비스들이 서로 통신하기 위한 네트워크
-- volumes : 데이터를 영구히 저장하고 공유하기 위한 파일시스템
-- configs : 서비스에서 필요로하는 설정 정보
-- secrets : 서비스에 제공해야하는 민감한 보안 정보
+- `services` : 컨테이너 이미지와 설정을 통해 실제 실행되는 서비스
+- `networks` : 서비스들이 서로 통신하기 위한 네트워크
+- `volumes` : 데이터를 영구히 저장하고 공유하기 위한 파일시스템
+- `configs` : 서비스에서 필요로하는 설정 정보
+- `secrets` : 서비스에 제공해야하는 민감한 보안 정보
+
+위의 목록들을 Docker Compose 파일(YAML)에 작성하여 원하는대로 Docker 어플리케이션을 구성하고 실행할 수 있음. 이 중에서 `services`는 필수로 작성해야함.
+
+### Docker Compose 핵심 기능
+
+- **단일 호스트에서 여러 독립적인 개발 환경을 가짐**
+  **프로젝트 이름**을 통해 각 환경을 서로로부터 독립시킴.
+- **컨테이너 생성 시 볼륨 데이터를 보존**
+  `docker compose up` 실행 시, 이전 실행으로부터 생성된 예전 컨테이너를 찾아 그 볼륨을 새 컨테이너에 복제
+- **변경된 컨테이너만 재생성**
+  설정이 변경되지 않은 서비스를 재시작하면 기존에 있던 컨테이너를 재활용
+- **변수와 개발 환경 간의 구성 이동을 지원**
+  다른 환경이나 사용자에 맞게 구성을 커스텀할 수 있음
+
+### Docker Compose가 자주 사용되는 사례
+
+- 개발 환경
+- 자동 테스트 환경
+- 단일 호스트 배포
+
+### p.s.
+
+Docker Compose의 버전이 V2가 되면서 V1에 대한 지원이 중단될 예정. 따라서 레거시 코드들의 V1 기준 Docker Compose 사용 예시를 참고할 때는 주의해야함!
