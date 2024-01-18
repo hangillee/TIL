@@ -26,7 +26,7 @@ Compose에서는 컨테이너들의 런타임 중에 설정 정보를 넘기기 
 6. 프로젝트 디렉토리에 `compose.yaml`과 함께 둔 `.env` 파일
 7. `Dockerfile`에서 `ENV`나 `ARG`로 설정한 환경 변수
 
-### `.env` 파일 사용
+### 환경 변수 설정 예제
 
 ```zsh
 $ cat .env
