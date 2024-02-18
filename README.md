@@ -3,6 +3,14 @@
 > Today I Learned
 > 하루하루 배운 것을 기록합니다.
 
+## Clean Code
+
+- [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html)
+- [POSIX New Line](https://github.com/hangillee/TIL/blob/main/Clean%20Code/POSIX%20New%20Line.md)
+- 메소드 분리
+
+---
+
 ## Computer Science
 
 ### Algorithm
@@ -11,17 +19,10 @@
 
 ---
 
-## Clean Code
-
-- [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html)
-- POSIX New Line
-- 메소드 분리
-
----
-
 ## Design Pattern
 
 - [Command-Query Seperation](https://github.com/hangillee/TIL/blob/main/Design%20Pattern/Command-Query%20Seperation.md)
+- [Model View Controller]()
 
 ---
 
