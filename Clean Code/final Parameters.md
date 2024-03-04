@@ -30,9 +30,9 @@ public void printName(String name) {
 
 ```java
 public void printName(final String name) {
-    name = "my name"; // 이렇게 작성할 수 없음!
+    // name = "my name"; 이렇게 작성할 수 없음!
     System.out.println(name);
 }
 ```
 
-실수를 피하는 코드는 유지보수성을 높이고 사소한 버그들을 줄일 수 있음. 따라서, **메소드의 매개변수는 `final` 키워드를 사용해 재할당을 금지하는 것은 좋은 코드라고 할 수 있음**.
+실수를 피하는 코드는 유지보수성을 높이고 사소한 버그들을 줄일 수 있음. 따라서, **메소드의 매개변수는 `final` 키워드를 사용해 재할당을 금지하는 것이 좋은 코드라고 할 수 있음**.
